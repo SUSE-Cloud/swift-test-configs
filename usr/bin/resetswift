@@ -38,9 +38,10 @@ echo "Creating XFS filesystem on logical volume $LVM_LV1"
 mkfs.xfs -f -i size=1024 $LVM_LV1_PATH
 
 echo "Mounting logical volume $LVM_LV1 to $MOUNTPOINT"
-sudo mount $LVM_LV1_PATH $MOUNTPOINT
-sudo mkdir -p $MOUNTPOINT/1 $MOUNTPOINT/2 $MOUNTPOINT/3 $MOUNTPOINT/4
-sudo chown -R openstack-swift. $MOUNTPOINT
+mkdir -p $MOUNTPOINT
+mount $LVM_LV1_PATH $MOUNTPOINT
+mkdir -p $MOUNTPOINT/1 $MOUNTPOINT/2 $MOUNTPOINT/3 $MOUNTPOINT/4
+chown -R openstack-swift. $MOUNTPOINT
 
 # sudo service rsyslog restart
 sudo service memcached restart
