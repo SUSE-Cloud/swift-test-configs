@@ -17,7 +17,7 @@ LOOP_FILE=/tmp/$LVM_VG
 MOUNTPOINT=/mnt/sdb1
 modprobe loop
 
-umount /mnt/sdb1
+umount $MOUNTPOINT
 if vgscan | grep -q $LVM_VG ; then
     echo "Removing existing $LVM_VG volume group"
     vgchange -an $LVM_VG
