@@ -1,0 +1,9 @@
+#!/bin/bash
+
+swift-init all stop
+sudo umount /mnt/sdb1
+sudo mkfs.xfs -f -i size=1024 /srv/swift-disk
+sudo mount /mnt/sdb1
+sudo mkdir -p /mnt/sdb1/1 /mnt/sdb1/2 /mnt/sdb1/3 /mnt/sdb1/4
+# sudo service rsyslog restart
+sudo service memcached restart
