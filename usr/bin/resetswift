@@ -41,7 +41,7 @@ echo "Mounting logical volume $LVM_LV1 to $MOUNTPOINT"
 mkdir -p $MOUNTPOINT
 mount $LVM_LV1_PATH $MOUNTPOINT
 mkdir -p $MOUNTPOINT/1 $MOUNTPOINT/2 $MOUNTPOINT/3 $MOUNTPOINT/4
-chown -R openstack-swift. $MOUNTPOINT
+chown -R swift. $MOUNTPOINT
 
 # sudo service rsyslog restart
 sudo service memcached restart
